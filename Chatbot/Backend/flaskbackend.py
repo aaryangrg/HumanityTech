@@ -4,13 +4,13 @@ from typing_extensions import final
 from flask import Flask,json,request,render_template
 import mysql.connector
 import time
-
+import os
 app = Flask(__name__)
 
 
 def get_data_C(rcat):
   try :
-    connection = mysql.connector.connect(host ="localhost", user = "root",passwd ="He@dshotkiller123")
+    connection = mysql.connector.connect(host ="localhost", user = "root",passwd = os.environ.get("SQL_PASSWORD"))
     cursor = connection.cursor()
     all_info = [] #contains the data brought out of the database
     ngo_responses = []#will contain the individual accordian rich responses per ngo
@@ -38,7 +38,7 @@ def get_data_C(rcat):
 #Category, State and City
 def get_data_SCatc(rcat,rstate,rcity):
   try :
-    connection = mysql.connector.connect(host ="localhost", user = "root",passwd ="He@dshotkiller123")
+    connection = mysql.connector.connect(host ="localhost", user = "root",passwd = os.environ.get("SQL_PASSWORD"))
     cursor = connection.cursor()
     all_info = [] #contains the data brought out of the database
     ngo_responses = []#will contain the individual accordian rich responses per ngo
@@ -59,7 +59,7 @@ def get_data_SCatc(rcat,rstate,rcity):
 #Category and State.
 def get_data_SCat(rcat,rstate):
   try :
-    connection = mysql.connector.connect(host ="localhost", user = "root",passwd ="He@dshotkiller123")
+    connection = mysql.connector.connect(host ="localhost", user = "root",passwd = os.environ.get("SQL_PASSWORD"))
     cursor = connection.cursor()
     all_info = [] #contains the data brought out of the database
     ngo_responses = []#will contain the individual accordian rich responses per ngo
@@ -82,7 +82,7 @@ def get_data_SCat(rcat,rstate):
 #Category and City
 def get_data_Catc(rcat,rcity):
   try :
-    connection = mysql.connector.connect(host ="localhost", user = "root",passwd ="He@dshotkiller123")
+    connection = mysql.connector.connect(host ="localhost", user = "root",passwd = os.environ.get("SQL_PASSWORD"))
     cursor = connection.cursor()
     all_info = [] #contains the data brought out of the database
     ngo_responses = []#will contain the individual accordian rich responses per ngo
