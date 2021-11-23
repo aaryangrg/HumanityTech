@@ -16,6 +16,8 @@ The chatbot can parse these combinations in any order (also in a successive data
 1. Frontend : HTML page integrated with Dialogflow(served as a page widget and integrated via a webhook with a single server for both the back and front end).
 2. Backend : Flask (Python)
 3. Database : MySQL
-4. Chatbot Framework : Dialogflow, Used for: 
-- Its NLP services : intent detection and labelling.
-- UI integration : to display Rich Responses(Accordions and Chips) returned from the server via a Webhook.
+4. Frameworks : 
+- Dialogflow, Used for : 
+1. NLP services : intent detection and labelling.
+2. UI integration : to display Rich Responses(Accordions and Chips) returned from the server via a Webhook.
+- Scrapy : Used to regularly update the NGO database by crawling NGOsIndia website and writing data to mySQL.
